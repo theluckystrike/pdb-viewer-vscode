@@ -1,0 +1,23 @@
+HEADER    TEST PROTEIN                            15-NOV-26   0TST              
+TITLE     TINY TEST STRUCTURE MADE FOR THE UNIT TESTS                         
+HELIX    1   1 ALA A    1  GLY A    2  1                                   2    
+ATOM      1  N   ALA A   1      11.104   6.134  -6.504  1.00 10.00           N  
+ATOM      2  CA  ALA A   1      11.639   6.071  -5.147  1.00 11.00           C  
+ATOM      3  C   ALA A   1      13.140   5.814  -5.152  1.00 12.00           C  
+ATOM      4  O   ALA A   1      13.793   5.869  -6.204  1.00 13.00           O  
+ATOM      5  CB  ALA A   1      11.344   7.371  -4.403  1.00 14.00           C  
+ATOM      6  N   GLY A   2      13.685   5.536  -3.969  1.00 15.00           N  
+ATOM      7  CA  GLY A   2      15.112   5.269  -3.839  1.00 16.00           C  
+ATOM      8  C   GLY A   2      15.552   4.946  -2.418  1.00 17.00           C  
+ATOM      9  O   GLY A   2      14.737   4.882  -1.494  1.00 18.00           O  
+ATOM     10  N   SER A   3      16.850   4.700  -2.250  1.00 19.00           N  
+ATOM     11  CA  SER A   3      17.400   4.400  -0.930  1.00 20.00           C  
+ATOM     12  C   SER A   3      18.900   4.200  -1.000  1.00 21.00           C  
+ATOM     13  O   SER A   3      19.500   4.300  -2.070  1.00 22.00           O  
+ATOM     14  OG  SER A   3      16.900   3.200  -0.300  1.00 23.00           O  
+HETATM   15 ZN    ZN A 101      16.000   3.000  -4.500  1.00 24.00          ZN  
+HETATM   16  C1  LIG A 201      14.000   7.000  -2.000  1.00 25.00           C  
+HETATM   17  O1  LIG A 201      14.500   7.500  -0.900  1.00 26.00           O  
+HETATM   18  N1  LIG A 201      13.200   7.900  -2.600  1.00 27.00           N  
+HETATM   19  O   HOH A 301      12.000   3.000  -2.000  1.00 28.00           O  
+END

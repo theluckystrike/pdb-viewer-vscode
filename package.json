@@ -1,0 +1,432 @@
+{
+  "name": "zovo-pdb-viewer",
+  "displayName": "PDB Viewer & Protein Structure",
+  "description": "PDB viewer for VS Code: open PDB, mmCIF, SDF, MOL2, XYZ, GRO and PQR files as a 3D protein or molecule model with cartoon, sticks, spheres and surface, a chain and ligand tree, a sequence strip and atom details. Works over Remote SSH and WSL. Offline, no account.",
+  "version": "0.1.0",
+  "publisher": "zovo",
+  "license": "MIT",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#14263A",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/pdb-viewer-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/theluckystrike/pdb-viewer-vscode/issues"
+  },
+  "homepage": "https://github.com/theluckystrike/pdb-viewer-vscode#readme",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Visualization",
+    "Data Science",
+    "Other"
+  ],
+  "keywords": [
+    "pdb",
+    "protein",
+    "molecule",
+    "mmcif",
+    "bioinformatics"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onUri"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "pdbViewer.editor",
+        "displayName": "PDB Viewer (3D structure)",
+        "selector": [
+          {
+            "filenamePattern": "*.pdb"
+          },
+          {
+            "filenamePattern": "*.ent"
+          },
+          {
+            "filenamePattern": "*.pdb1"
+          },
+          {
+            "filenamePattern": "*.cif"
+          },
+          {
+            "filenamePattern": "*.mmcif"
+          },
+          {
+            "filenamePattern": "*.mcif"
+          },
+          {
+            "filenamePattern": "*.pqr"
+          },
+          {
+            "filenamePattern": "*.sdf"
+          },
+          {
+            "filenamePattern": "*.mol"
+          },
+          {
+            "filenamePattern": "*.mol2"
+          },
+          {
+            "filenamePattern": "*.xyz"
+          },
+          {
+            "filenamePattern": "*.gro"
+          },
+          {
+            "filenamePattern": "*.pdb.gz"
+          },
+          {
+            "filenamePattern": "*.ent.gz"
+          },
+          {
+            "filenamePattern": "*.cif.gz"
+          },
+          {
+            "filenamePattern": "*.mmcif.gz"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "pdbViewer.openWithViewer",
+        "title": "Open in PDB Viewer",
+        "category": "PDB Viewer",
+        "icon": "$(symbol-structure)"
+      },
+      {
+        "command": "pdbViewer.openAsText",
+        "title": "Open as Text",
+        "category": "PDB Viewer",
+        "icon": "$(file-code)"
+      },
+      {
+        "command": "pdbViewer.openSample",
+        "title": "Open the Sample Protein (1HSG)",
+        "category": "PDB Viewer"
+      },
+      {
+        "command": "pdbViewer.openSampleCif",
+        "title": "Open the Sample mmCIF File (1CRN)",
+        "category": "PDB Viewer"
+      },
+      {
+        "command": "pdbViewer.openWalkthrough",
+        "title": "Get Started",
+        "category": "PDB Viewer"
+      },
+      {
+        "command": "pdbViewer.moreViewers",
+        "title": "More free tools by Zovo",
+        "category": "PDB Viewer"
+      },
+      {
+        "command": "pdbViewer.supportDeveloper",
+        "title": "Support the developer",
+        "category": "PDB Viewer"
+      },
+      {
+        "command": "pdbViewer.measure",
+        "title": "Measure: Distances, Angles, H-bonds (Pro)",
+        "category": "PDB Viewer",
+        "icon": "$(milestone)"
+      },
+      {
+        "command": "pdbViewer.superpose",
+        "title": "Superpose Two Structures and RMSD (Pro)",
+        "category": "PDB Viewer",
+        "icon": "$(layers)"
+      },
+      {
+        "command": "pdbViewer.bindingSite",
+        "title": "Binding Site Report (Pro)",
+        "category": "PDB Viewer",
+        "icon": "$(target)"
+      },
+      {
+        "command": "pdbViewer.zovoPro.measure",
+        "title": "Zovo Pro: Measure distances, angles and H-bonds"
+      },
+      {
+        "command": "pdbViewer.zovoPro.superpose",
+        "title": "Zovo Pro: Superpose and RMSD"
+      },
+      {
+        "command": "pdbViewer.zovoPro.bindingSite",
+        "title": "Zovo Pro: Binding site report"
+      },
+      {
+        "command": "pdbViewer.getPro",
+        "title": "Get Zovo Pro (USD 19 once, all 22 Zovo extensions)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "pdbViewer.payWithPayPal",
+        "title": "Pay for Zovo Pro with PayPal (USD 19, team of 5 USD 59)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "pdbViewer.unlockWithSponsors",
+        "title": "I already paid: unlock with GitHub Sponsors",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "pdbViewer.enterLicenseKey",
+        "title": "Enter Zovo Pro license key",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "pdbViewer.removeLicense",
+        "title": "Remove Zovo Pro from this editor",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "pdbViewer.payByCard",
+        "title": "Pay for Zovo Pro by card (USD 19)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "pdbViewer.enterKey",
+        "title": "Enter a key",
+        "category": "Zovo Pro"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "pdbViewer.openAsText",
+          "when": "activeCustomEditorId == 'pdbViewer.editor'",
+          "group": "navigation@1"
+        },
+        {
+          "command": "pdbViewer.openWithViewer",
+          "when": "resourceFilename =~ /\\.(pdb|ent|pdb1|cif|mmcif|mcif|pqr|sdf|mol|mol2|xyz|gro)(\\.gz)?$/i && activeEditor == workbench.editors.files.textFileEditor",
+          "group": "navigation@9"
+        },
+        {
+          "command": "pdbViewer.measure",
+          "when": "activeCustomEditorId == 'pdbViewer.editor' && config.pdbViewer.showProTools",
+          "group": "1_pdb@1"
+        },
+        {
+          "command": "pdbViewer.superpose",
+          "when": "activeCustomEditorId == 'pdbViewer.editor' && config.pdbViewer.showProTools",
+          "group": "1_pdb@2"
+        },
+        {
+          "command": "pdbViewer.bindingSite",
+          "when": "activeCustomEditorId == 'pdbViewer.editor' && config.pdbViewer.showProTools",
+          "group": "1_pdb@3"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "pdbViewer.openWithViewer",
+          "when": "resourceFilename =~ /\\.(pdb|ent|pdb1|cif|mmcif|mcif|pqr|sdf|mol|mol2|xyz|gro)(\\.gz)?$/i && !explorerResourceIsFolder",
+          "group": "navigation@9"
+        },
+        {
+          "command": "pdbViewer.zovoPro.measure",
+          "when": "resourceFilename =~ /\\.(pdb|ent|pdb1|cif|mmcif|mcif|pqr|sdf|mol|mol2|xyz|gro)(\\.gz)?$/i && !explorerResourceIsFolder && config.pdbViewer.showProTools",
+          "group": "zovoPro@1"
+        },
+        {
+          "command": "pdbViewer.zovoPro.superpose",
+          "when": "resourceFilename =~ /\\.(pdb|ent|pdb1|cif|mmcif|mcif|pqr|mol2|gro)(\\.gz)?$/i && !explorerResourceIsFolder && config.pdbViewer.showProTools",
+          "group": "zovoPro@2"
+        },
+        {
+          "command": "pdbViewer.zovoPro.bindingSite",
+          "when": "resourceFilename =~ /\\.(pdb|ent|pdb1|cif|mmcif|mcif|pqr|mol2|gro)(\\.gz)?$/i && !explorerResourceIsFolder && config.pdbViewer.showProTools",
+          "group": "zovoPro@3"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "pdbViewer.measure",
+          "when": "config.pdbViewer.showProTools"
+        },
+        {
+          "command": "pdbViewer.superpose",
+          "when": "config.pdbViewer.showProTools"
+        },
+        {
+          "command": "pdbViewer.bindingSite",
+          "when": "config.pdbViewer.showProTools"
+        },
+        {
+          "command": "pdbViewer.zovoPro.measure",
+          "when": "false"
+        },
+        {
+          "command": "pdbViewer.zovoPro.superpose",
+          "when": "false"
+        },
+        {
+          "command": "pdbViewer.zovoPro.bindingSite",
+          "when": "false"
+        },
+        {
+          "command": "pdbViewer.openAsText",
+          "when": "activeCustomEditorId == 'pdbViewer.editor'"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "PDB Viewer",
+      "properties": {
+        "pdbViewer.style": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "cartoon",
+            "ballstick",
+            "stick",
+            "sphere",
+            "line"
+          ],
+          "enumDescriptions": [
+            "Cartoon with ligands as sticks for proteins and nucleic acids, ball and stick for small molecules",
+            "Cartoon",
+            "Ball and stick",
+            "Sticks",
+            "Spheres",
+            "Lines"
+          ],
+          "default": "auto",
+          "description": "Style a structure opens with. You can change it in the viewer toolbar."
+        },
+        "pdbViewer.color": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "chain",
+            "residue",
+            "element",
+            "bfactor",
+            "ss"
+          ],
+          "enumDescriptions": [
+            "By chain for proteins, by element for small molecules",
+            "By chain",
+            "By residue type",
+            "By element",
+            "By B-factor (blue low, red high)",
+            "By secondary structure"
+          ],
+          "default": "auto",
+          "description": "Coloring a structure opens with. You can change it in the viewer toolbar."
+        },
+        "pdbViewer.background": {
+          "type": "string",
+          "enum": [
+            "theme",
+            "black",
+            "white"
+          ],
+          "default": "theme",
+          "description": "Background of the 3D view: the editor background of your color theme, black or white."
+        },
+        "pdbViewer.bindingSiteRadius": {
+          "type": "number",
+          "default": 5,
+          "minimum": 2,
+          "maximum": 12,
+          "description": "Distance in angstrom (Å) the binding site report (Pro) starts with."
+        },
+        "pdbViewer.hbondCutoff": {
+          "type": "number",
+          "default": 3.5,
+          "minimum": 2.6,
+          "maximum": 4,
+          "description": "Longest N or O to N or O distance in angstrom (Å) listed as a hydrogen bond candidate by Measure (Pro)."
+        },
+        "pdbViewer.showProTools": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the Zovo Pro tools (measure, superpose, binding site report) in the Command Palette, the Explorer menu and the viewer toolbar. Everything free stays visible."
+        },
+        "pdbViewer.askForRating": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ask once for a Marketplace rating after structures opened without an error on two occasions at least 30 minutes apart. \"Later\" asks one more time after 7 days, \"No thanks\" never asks again. Nothing is sent anywhere."
+        },
+        "pdbViewer.showSupportLinks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the small Rate, More free tools and Zovo Pro links at the bottom of the viewer. Nothing is sent anywhere."
+        }
+      }
+    },
+    "walkthroughs": [
+      {
+        "id": "pdbViewer.start",
+        "title": "Get started with the PDB Viewer",
+        "description": "Open protein and molecule structure files in VS Code as a 3D model.",
+        "steps": [
+          {
+            "id": "open",
+            "title": "Open a structure file",
+            "description": "Click a .pdb, .cif, .sdf, .mol2, .xyz, .gro or .pqr file. It opens as a 3D model with a tree of chains, residues and ligands on the left and the sequence below.\n[Open the sample protein](command:pdbViewer.openSample)",
+            "media": {
+              "image": "images/screenshot.png",
+              "altText": "HIV-1 protease with its inhibitor open in VS Code as a 3D cartoon, with the chain tree and the sequence strip."
+            },
+            "completionEvents": [
+              "onCommand:pdbViewer.openSample"
+            ]
+          },
+          {
+            "id": "explore",
+            "title": "Styles, colors and atom details",
+            "description": "Switch between cartoon, ball and stick, sticks, spheres and lines, add a surface, and color by chain, residue, element, B-factor or secondary structure. Click an atom to read its name, residue, chain, coordinates and B-factor.\n[Open the sample mmCIF file](command:pdbViewer.openSampleCif)",
+            "media": {
+              "markdown": "walkthrough/explore.md"
+            },
+            "completionEvents": [
+              "onCommand:pdbViewer.openSampleCif"
+            ]
+          },
+          {
+            "id": "remote",
+            "title": "Files on a cluster or in WSL",
+            "description": "Open a structure from a Remote SSH, WSL or container window the same way. VS Code hands the file to the viewer, so nothing is copied to your computer first and the viewer makes no network calls.",
+            "media": {
+              "markdown": "walkthrough/remote.md"
+            }
+          },
+          {
+            "id": "zovo-related",
+            "title": "Tools that often go with structure files",
+            "description": "These free Zovo extensions open the sequence, data and model files that sit next to structures. A link opens the extension page, and you choose there whether to install it.\n[FASTQ & FASTA Viewer](command:extension.open?%5B%22zovo.zovo-fastq-viewer%22%5D)\n[NetCDF & HDF5 Viewer](command:extension.open?%5B%22zovo.hdf5-netcdf-explorer%22%5D)\n[3D Model Viewer (STL, OBJ, glTF)](command:extension.open?%5B%22zovo.3d-model-viewer%22%5D)",
+            "media": {
+              "markdown": "walkthrough/related.md"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node scripts/test.js",
+    "package": "npx -y @vscode/vsce@3 package --no-dependencies"
+  },
+  "devDependencies": {},
+  "sponsor": {
+    "url": "https://github.com/sponsors/theluckystrike/sponsorships?tier_id=679878"
+  }
+}
